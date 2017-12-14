@@ -1,0 +1,101 @@
+Dynamic X-Path:- 
+
+Once you are done with xpath I will highly recommend you to visit Dynamic CSS as well which is highly used in Cross-browser Testing as well.
+
+What is Xpath ::-(Node & Hub Concept)
+In Selenium automation, if the elements are not found by the general locators like id, class, name, etc. then XPath is used to find an element on the web page .
+
+XPath is an important and core component of XSLT standard. 
+
+NOte: XSL Transformations(Extensible Stylesheet Language Transformations)
+What does an XSLT do?
+XSLT (Extensible Stylesheet Language Transformations) is a language for transforming XML documents into other XML documents, or other formats such as HTML for web pages, plain text or XSL Formatting Objects, which may subsequently be converted to other formats, such as PDF, PostScript and PNG.
+
+It is used to traverse(Par karna) the elements and attributes in an XML document.
+XPath is a W3C recommendation.
+XPath defines structure: XPath is used to define the parts(Nodes) of an XML document(Seven Kind of nodes) i.e. element, attributes, text, namespace, processing-instruction, comment, and document nodes.
+
+An XML document can be specified as a tree of nodes. The topmost element of the tree is called the root element.
+
+Absolute :- An absolute path starts with root node or with '/'.
+
+Relative :-A path is called relative path if it is started with the node that we've selected.
+
+Relative XPath method (To find element in selenium script):- 
+
+1. Using single attribute :- // tagname[@attribute-name=’value1’]
+   Also  --  >>  //label[contains(Text(), 'Remember Me')]
+
+Example:- for fields(Email, Password)
+ 
+// a [@href=’http://www.google.com’]
+ 
+ 
+//input[@id=’name’]
+ 
+ 
+//input[@name=’username’]
+ 
+ 
+//img[@alt=’sometext’]
+
+2. Using multiple attribute
+
+//tagname[@attribute1=’value1’][attribute2=’value2’]
+ 
+Example :- 
+//a[@id=’id1’][@name=’namevalue1’]
+ 
+//img[@src=’’][@href=’’]
+
+3.Using contains method
+Syntax
+//tagname[contains(@attribute,’value1’)]
+
+ Example :- hyperLinks(Ex; forgot password )
+
+//input[contains(@id,’’)]
+ 
+//input[contains(@name,’’)]
+ 
+//a[contains(@href,’’)]
+ 
+//img[contains(@src,’’)]
+ 
+//div[contains(@id,’’)]
+
+4.Using starts-with method
+//tagname[starts-with(@attribute-name,’’)]
+ 
+  Example :- 
+//id[starts-with(@id,’’)]
+ 
+//a[starts-with(@href=’’)]
+ 
+//img[starts-with(@src=’’)]
+ 
+//div[starts-with(@id=’’)]
+ 
+//input[starts-with(@id=’’)]
+ 
+//button[starts-with(@id,’’)]
+ 
+And so on.
+
+5. Using Following node
+Xpath/following::again-ur-regular-path
+ 
+//input[@id=’’]/following::input[1]
+ 
+//a[@href=’’]/following::a[1]
+ 
+//img[@src=’’]/following::img[1]\
+
+6. Using preceding node
+Xpath/preceding::again-ur-regular-path
+ 
+//input[@id=’’]/ preceding::input[1]
+ 
+//a[@href=’’]/ preceding::a[1]
+ 
+//img[@src=’’]/ preceding::img[1]
